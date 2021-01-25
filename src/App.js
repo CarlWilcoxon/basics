@@ -6,6 +6,7 @@ import './App.css';
 function App() {
   const [count, setCount] = useState(0);
   // Create spin counter, once every 10 seconds.
+    
 
   return (
     <div className="App">
@@ -22,7 +23,10 @@ function App() {
           Learn React
         </Button>
         <Typography>You clicked {count} times</Typography>
-        <Button onClick={() => setCount(count + 1)}>
+        <Button onClick={ () => {
+            setTimeout(() => { setCount(count + 1) }, 200)
+          }
+        }>
           Click me
         </Button>
       </header>
